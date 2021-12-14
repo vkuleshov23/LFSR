@@ -2,6 +2,7 @@
 #define _FREQUENCY_
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 class Frequency {
 public:
@@ -9,7 +10,7 @@ public:
 		int ONE = 0, ZERO = 0;
 		for(int i = 0; i < NUMS.size(); i++){
 			for(int j = 0; j < dimension; j++) {
-				if(NUMS[i] & (256>>j)){
+				if(NUMS[i] & (int(pow(2, dimension-1))>>j)){
 					ONE++;
 				} else {
 					ZERO++;

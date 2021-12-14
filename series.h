@@ -51,7 +51,7 @@ private:
 		for(int i = 0; i < NUMS.size(); i++){
 			for(int j = 0; j < dimension; j++) {
 				
-				flag = (NUMS[i] & (256>>j))?true:false;
+				flag = (NUMS[i] & (int(pow(2, dimension-1))>>j))?true:false;
 
 				if(flag == number){
 					// cout << "PUCK\n";

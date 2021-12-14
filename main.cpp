@@ -12,16 +12,25 @@ int main() {
 	
 	LFSR a;
 	// a.print();
+	// a.printBin();
+	// cout << '\n';
+	// int N = int(pow(2, 9) -1);
 	int N = 30;
 	vector<int> mass;
+
+	for(int i = 0; i < 5000; i++){
+		a.shift();
+	}
 
 	for(int i = 0; i < N; i++) {
 		mass.push_back(a.shift());
 		// a.print();
 		a.printBin();
-		// cout << ' ';
+		cout << '\n';
 	}
 	cout << '\n';
+
+
 	// int count = 0;
 	// for(int i = 0; i < N; i++) {
 	// 	for(int j = 0; j < N; j++) {
@@ -37,5 +46,5 @@ int main() {
 	Frequency::test(mass, 9);
 	Series::test(mass, 9);
 	Poker::test(mass,9, 3);
-	Autocor::test(mass, 9, 10);
+	Autocor::test(mass, 9);
 }

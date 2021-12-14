@@ -20,7 +20,7 @@ public:
 					Ni[number] += 1;
 					number = 0;
 				}
-				if(NUMS[i] & (256>>j)){
+				if(NUMS[i] & (int(pow(2, dimension-1))>>j)){
 					number ^= 1<<count;
 				}
 				count++;

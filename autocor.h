@@ -7,9 +7,9 @@
 
 class Autocor {
 public:
-	static void test(std::vector<int> NUMS, int dimension, int d) {
+	static void test(std::vector<int> NUMS, int dimension) {
 		std::vector<double> result;
-		int counter = (NUMS.size() * dimension)-d;
+		int counter = (NUMS.size() * dimension);
 		for(int d = 1; d < counter/2; d++) {
 			autocor(NUMS, dimension, d, result);
 		}
@@ -41,8 +41,8 @@ private:
 		int bitPos1 = i%dimension;
 		int bitPos2 = (i+d)%dimension;
 		
-		bool first = (NUMS[blockPos1] & (256>>bitPos1))?true:false;
-		bool second = (NUMS[blockPos2] & (256>>bitPos2))?true:false;
+		bool first = (NUMS[blockPos1] & (int(pow(2, dimension-1))>>bitPos1))?true:false;
+		bool second = (NUMS[blockPos2] & (int(pow(2, dimension-1))>>bitPos2))?true:false;
 
 		int res = (first != second)?1:0;
 		// std::cout << "\t1: block:" << blockPos1 << "| bit:" << bitPos1 << '\n';
