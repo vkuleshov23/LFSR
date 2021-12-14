@@ -8,12 +8,12 @@
 class Autocor {
 public:
 	static void test(std::vector<int> NUMS, int dimension, int d) {
-		vector<double> result;
+		std::vector<double> result;
 		int counter = (NUMS.size() * dimension)-d;
 		for(int d = 1; d < counter/2; d++) {
 			autocor(NUMS, dimension, d, result);
 		}
-		ofstream fout;
+		std::ofstream fout;
 		fout.open("autocor.txt");
 		for(int i = 0; i < result.size(); i++){
 			fout  << i+1 << " " << result[i] << '\n';
